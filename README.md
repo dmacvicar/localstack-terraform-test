@@ -41,7 +41,7 @@ make install
 
 ## 🏃‍♂️ **How to Run**
 
-- 🔑 (Pro-image only) Set the `LOCALSTACK_API_KEY` environment variable.
+- 🔑 (Pro-image only) Set the `LOCALSTACK_AUTH_TOKEN` environment variable.
 - Apply the patch to the Terraform provider AWS:
 ```
 python -m terraform_pytest.main patch

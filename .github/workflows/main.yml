@@ -104,7 +104,7 @@ jobs:
 
     - name: Setup LocalStack
       env:
-        LOCALSTACK_API_KEY: ${{ secrets.LOCALSTACK_API_KEY }}
+        LOCALSTACK_AUTH_TOKEN: ${{ secrets.LOCALSTACK_AUTH_TOKEN }}
         TMP_USER: ${{ secrets.TMP_USER }}
         TMP_PW: ${{ secrets.TMP_PW }}
       run: |
@@ -138,7 +138,7 @@ jobs:
         enable_tinybird=${{ inputs.tinybird-reporting || 'true' }}
         if [[ $enable_pro == 'true' ]]
         then
-          export LOCALSTACK_API_KEY=${{ secrets.LOCALSTACK_API_KEY }}
+          export LOCALSTACK_AUTH_TOKEN=${{ secrets.LOCALSTACK_AUTH_TOKEN }}
         fi
         
         if [[ $enable_tinybird == 'true' ]]

@@ -218,7 +218,7 @@ def _startup_localstack():
         _localstack_health_check()
     except:
         os.system(
-            "DEBUG=1 FAIL_FAST=1 DNS_ADDRESS=127.0.0.1 EXTENSION_DEV_MODE=1 DISABLE_EVENTS=1 LOCALSTACK_API_KEY=$LOCALSTACK_API_KEY localstack start -d"
+            "DEBUG=1 FAIL_FAST=1 DNS_ADDRESS=127.0.0.1 EXTENSION_DEV_MODE=1 DISABLE_EVENTS=1 LOCALSTACK_AUTH_TOKEN=$LOCALSTACK_AUTH_TOKEN localstack start -d"
         )
 
         _localstack_health_check()
