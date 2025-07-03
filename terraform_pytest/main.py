@@ -15,11 +15,6 @@ def cli():
     pass
 
 
-@click.command(name="patch", help="Patch the golang test runner")
-def patch_command():
-    patch_repository()
-
-
 @click.command(name="build", help="Build binary for testing")
 @click.option(
     "--service",
@@ -66,6 +61,5 @@ def clean_command():
 
 if __name__ == "__main__":
     cli.add_command(build_command)
-    cli.add_command(patch_command)
     cli.add_command(clean_command)
     cli()

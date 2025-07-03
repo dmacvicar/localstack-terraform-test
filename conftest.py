@@ -71,6 +71,7 @@ class GoItem(pytest.Item):
                 "AWS_THIRD_SECRET_ACCESS_KEY": "test",
                 "AWS_THIRD_ACCESS_KEY_ID": "test",
                 "AWS_THIRD_REGION": "eu-west-1",
+                "AWS_ENDPOINT_URL": "http://localhost:4566",
             }
         )
 

@@ -8,8 +8,6 @@ from terraform_pytest.constants import (
     FAILING_SERVICES,
     LS_COMMUNITY_SERVICES,
     LS_PRO_SERVICES,
-    TF_REPO_NAME,
-    TF_REPO_PATCH_FILES,
     TF_REPO_PATH,
     TF_REPO_SERVICE_PATH,
     TF_TEST_BINARY_PATH,
@@ -135,23 +133,3 @@ def get_services(service: str):
         else:
             validated_services.append(s)
     return list(set(validated_services))
-
-
-def patch_repository():
-    """
-    Patch a repository using a list of patch files.
-
-    return: None
-    """
-    logging.info(f"Initiating patching process for repository: {TF_REPO_NAME}...")
-    for patch_file in TF_REPO_PATCH_FILES:
-        patch_file_path = os.path.realpath(patch_file)
-        cmd = ["git", "apply", patch_file_path]
-        return_code, stdout = execute_command(cmd=cmd, cwd=TF_REPO_PATH)
-
-        if return_code != 0:
-            logging.error("Failure encountered during repository patching.")
-            logging.error(stdout)
-        else:
-            if stdout:
-                logging.info(f"{patch_file} has been patched successfully.")
