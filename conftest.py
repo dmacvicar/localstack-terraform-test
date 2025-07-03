@@ -2,7 +2,7 @@ import csv
 import json
 import os
 import re
-from os.path import dirname, realpath, relpath
+from os.path import dirname, relpath
 from pathlib import Path
 
 import pytest
@@ -217,7 +217,7 @@ def pytest_sessionfinish(session, exitstatus):
 def _startup_localstack():
     try:
         _localstack_health_check()
-    except:
+    except Exception:
         os.system(
             "DEBUG=1 FAIL_FAST=1 DNS_ADDRESS=127.0.0.1 EXTENSION_DEV_MODE=1 DISABLE_EVENTS=1 LOCALSTACK_AUTH_TOKEN=$LOCALSTACK_AUTH_TOKEN localstack start -d"
         )

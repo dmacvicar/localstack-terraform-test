@@ -8,7 +8,6 @@ from terraform_pytest.constants import (
     FAILING_SERVICES,
     LS_COMMUNITY_SERVICES,
     LS_PRO_SERVICES,
-    TF_REPO_PATH,
     TF_REPO_SERVICE_PATH,
     TF_TEST_BINARY_PATH,
 )

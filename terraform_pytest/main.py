@@ -5,7 +5,7 @@ from timeit import default_timer as timer
 import click
 
 from terraform_pytest.constants import TF_REPO_PATH, TF_TEST_BINARY_PATH
-from terraform_pytest.utils import build_test_binary, get_services, patch_repository
+from terraform_pytest.utils import build_test_binary, get_services
 
 logging.basicConfig(level=logging.INFO)
 

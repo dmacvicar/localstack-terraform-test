@@ -1,5 +1,4 @@
 # Prints a JSON dict mapping the different partitions in the terraform-tests.yaml to their service
-import json
 import sys
 
 import yaml

@@ -31,11 +31,11 @@ init_precommit:				## Install the pre-commit hook into your local git repository
 	($(VENV_RUN); pre-commit install)
 
 lint:						## Run linting
-	@echo "Running black... "
-	$(VENV_RUN); black --check .
+	@echo "Running ruff... "
+	$(VENV_RUN); python -m ruff check .
 
 format:						## Run formatting
-	$(VENV_RUN); python -m isort .; python -m black .
+	$(VENV_RUN); python -m isort .; python -m ruff format .
 
 reset-submodules:			## Reset the submodules to the specified commit
 	git submodule foreach git reset --hard
